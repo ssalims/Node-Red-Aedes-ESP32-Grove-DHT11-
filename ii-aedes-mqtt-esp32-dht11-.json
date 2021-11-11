@@ -1,0 +1,50 @@
+[
+    {
+        "id": "268329a13bf52a70",
+        "type": "mqtt in",
+        "z": "59685be6b489bcfb",
+        "name": "",
+        "topic": "labA/rack1/humid",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "eeb4d7350013cf12",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "90f84eab51472326"
+            ]
+        ]
+    },
+    {
+        "id": "eeb4d7350013cf12",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.108",
+        "port": "1889",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
