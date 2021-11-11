@@ -29,9 +29,9 @@ DHT dht(DHTPIN, DHTTYPE);
 unsigned long lastMillis = 0;
 
 // Update these with values suitable for your network.
-const char* ssid = "raspberrypi 2.4G";
-const char* password = "123456788";
-const char* mqtt_server = "192.168.0.108"; /// NodeRED IP Address
+const char* ssid = "YOUR SSID";
+const char* password = "YOUR SSID PASSWORD";
+const char* mqtt_server = "NODE-RED IP ADDRESS"; /// NodeRED IP Address
 int mqtt_port = 1889; //Must match with broker's MQTT port - dont use 1880 
 
 WiFiClient espClient;
