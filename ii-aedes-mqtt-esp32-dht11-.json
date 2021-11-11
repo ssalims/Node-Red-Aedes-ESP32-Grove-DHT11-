@@ -1,0 +1,131 @@
+[
+    {
+        "id": "59685be6b489bcfb",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "eafee9bf85ad27b3",
+        "type": "aedes broker",
+        "z": "59685be6b489bcfb",
+        "name": "",
+        "mqtt_port": "1889",
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4e807a421c8a8bcc",
+        "type": "mqtt in",
+        "z": "59685be6b489bcfb",
+        "name": "",
+        "topic": "labA/rack1/temp",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "eeb4d7350013cf12",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "5804ec15c1560c91"
+            ]
+        ]
+    },
+    {
+        "id": "5804ec15c1560c91",
+        "type": "debug",
+        "z": "59685be6b489bcfb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "90f84eab51472326",
+        "type": "debug",
+        "z": "59685be6b489bcfb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "268329a13bf52a70",
+        "type": "mqtt in",
+        "z": "59685be6b489bcfb",
+        "name": "",
+        "topic": "labA/rack1/humid",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "eeb4d7350013cf12",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "90f84eab51472326"
+            ]
+        ]
+    },
+    {
+        "id": "eeb4d7350013cf12",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.108",
+        "port": "1889",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
