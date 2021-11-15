@@ -1,0 +1,186 @@
+[
+    {
+        "id": "fa01b89fdd3f1eb2",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3e4a4081.cbe08",
+        "type": "debug",
+        "z": "fa01b89fdd3f1eb2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9c19a1a9.a2da9",
+        "type": "inject",
+        "z": "fa01b89fdd3f1eb2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "topic1",
+        "payload": "BIENVENIDO",
+        "payloadType": "str",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "9ec7b65f.640f38"
+            ]
+        ]
+    },
+    {
+        "id": "bec7f206.3dbca8",
+        "type": "inject",
+        "z": "fa01b89fdd3f1eb2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "24",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "temperature",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "temperature",
+        "payload": "24",
+        "payloadType": "num",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "9ec7b65f.640f38"
+            ]
+        ]
+    },
+    {
+        "id": "81be4b83.6170b",
+        "type": "inject",
+        "z": "fa01b89fdd3f1eb2",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "temperature",
+        "payload": "22",
+        "payloadType": "num",
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "9ec7b65f.640f38"
+            ]
+        ]
+    },
+    {
+        "id": "14efe62d.28395a",
+        "type": "inject",
+        "z": "fa01b89fdd3f1eb2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "Something Else",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "topic1",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "topic1",
+        "payload": "Something Else",
+        "payloadType": "str",
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "9ec7b65f.640f38"
+            ]
+        ]
+    },
+    {
+        "id": "9ec7b65f.640f38",
+        "type": "join",
+        "z": "fa01b89fdd3f1eb2",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 343.5,
+        "y": 260,
+        "wires": [
+            [
+                "6addbc3c.268eec"
+            ]
+        ]
+    },
+    {
+        "id": "6addbc3c.268eec",
+        "type": "function",
+        "z": "fa01b89fdd3f1eb2",
+        "name": "Test",
+        "func": "if (msg.payload.topic1 == \"BIENVENIDO\"  &&  msg.payload.temperature <= 23 ) {\n    msg.payload = \"ON\";\n} else {\n    msg.payload = \"OFF\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 481.5,
+        "y": 259,
+        "wires": [
+            [
+                "3e4a4081.cbe08"
+            ]
+        ]
+    }
+]
